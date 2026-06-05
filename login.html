@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar - HINORD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/logincss.css">
+</head>
+<body>
+
+  <!-- LADO IZQUIERDO -->
+  <div class="login-left">
+    <img src="../img/finca.png" alt="Finca HINORD">
+    <div class="login-left-overlay">
+      <a class="login-brand" href="index.html">HIN<span>ORD</span></a>
+      <div class="login-quote">
+        <blockquote>
+          Tu finca,<br>
+          <span>siempre bajo control</span>
+        </blockquote>
+        <p>Accede al portal para ver el estado de tu hato, producción y registros desde cualquier lugar.</p>
+      </div>
+      <div class="login-stats">
+        <div class="ls-item">
+          <div class="ls-num">100%</div>
+          <div class="ls-label">Digital</div>
+        </div>
+        <div class="ls-item">
+          <div class="ls-num">24/7</div>
+          <div class="ls-label">Disponible</div>
+        </div>
+        <div class="ls-item">
+          <div class="ls-num">∞</div>
+          <div class="ls-label">Registros</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LADO DERECHO -->
+  <div class="login-right">
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    <div class="form-tag">Portal HINORD</div>
+    <h1 class="form-title">Bienvenido<br>de vuelta</h1>
+    <p class="form-subtitle">Ingresa tus credenciales para acceder a los datos de tu finca.</p>
+
+    <div class="form-group" id="grupo-usuario">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" placeholder="Tu nombre de usuario" autocomplete="username">
+      <div class="form-error-msg">Por favor ingresa tu usuario</div>
+    </div>
+
+    <div class="form-group" id="grupo-password">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+      <div class="form-error-msg">Por favor ingresa tu contraseña</div>
+    </div>
+
+    <div class="form-options">
+      <label class="form-check">
+        <input type="checkbox" id="recordar">
+        Recordar sesión
+      </label>
+      <a href="soporte.html" class="form-forgot">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <button class="btn-login" id="btn-ingresar" onclick="handleLogin()">
+      Ingresar al sistema
+    </button>
+
+    <div class="form-divider">¿Necesitas ayuda?</div>
+
+    <div class="form-footer">
+      Contacta a soporte en <a href="soporte.html">soporte@hinord.com</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const usuario = document.getElementById('usuario').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const grupoU = document.getElementById('grupo-usuario');
+      const grupoP = document.getElementById('grupo-password');
+      const btn = document.getElementById('btn-ingresar');
+
+      // Limpiar errores
+      grupoU.classList.remove('error');
+      grupoP.classList.remove('error');
+
+      let valid = true;
+      if (!usuario) { grupoU.classList.add('error'); valid = false; }
+      if (!password) { grupoP.classList.add('error'); valid = false; }
+      if (!valid) return;
+
+      // Simular loading
+      btn.classList.add('loading');
+      btn.textContent = 'Ingresando';
+
+      // Aquí conectas tu lógica de autenticación real
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        btn.textContent = 'Ingresar al sistema';
+        // Por ahora muestra mensaje — reemplaza esto con tu lógica real
+        alert('Aquí conectas con tu base de datos en la nube.');
+      }, 1500);
+    }
+
+    // Enter para enviar
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleLogin();
+    });
+  </script>
+</body>
+</html>

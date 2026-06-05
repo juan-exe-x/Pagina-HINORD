@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soporte y Contacto - HINORD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/soportecss.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">HIN<span>ORD</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#sobre">Sobre el sistema</a></li>
+      <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+      <li><a href="soporte.html" class="nav-active">Soporte</a></li>
+      <li><a href="login.html" class="nav-btn">Ingresar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="soporte-hero">
+    <span class="section-tag">Centro de ayuda</span>
+    <h1>Soporte y <span>Contacto</span></h1>
+    <p>Estamos aquí para ayudarte. Contáctanos por WhatsApp o correo electrónico y te responderemos lo antes posible.</p>
+  </div>
+
+  <!-- MAIN -->
+  <div class="soporte-main">
+
+    <!-- Tarjetas de contacto -->
+    <div class="soporte-grid">
+
+      <!-- WhatsApp -->
+      <div class="contacto-card whatsapp reveal">
+        <div class="card-icon whatsapp-icon">💬</div>
+        <div class="card-label">Respuesta inmediata</div>
+        <div class="card-title">WhatsApp</div>
+        <div class="card-desc">
+          Para consultas rápidas, reportes de fallas o ayuda en tiempo real.
+          Nuestro equipo responde en horario de atención.
+        </div>
+        <div class="card-value">
+          📱 +57 3213869901
+    
+        </div>
+        <a href="https://wa.me/573213869901?text=Hola,%20necesito%20ayuda%20con%20HINORD" 
+           target="_blank" class="btn-contacto btn-whatsapp">
+          💬 Escribir por WhatsApp
+        </a>
+      </div>
+
+      <!-- Correo -->
+      <div class="contacto-card correo reveal" style="transition-delay:0.15s">
+        <div class="card-icon correo-icon">✉️</div>
+        <div class="card-label">Soporte técnico</div>
+        <div class="card-title">Correo electrónico</div>
+        <div class="card-desc">
+          Para reportes detallados, solicitudes de mejora o consultas que requieran
+          documentación o archivos adjuntos.
+        </div>
+        <div class="card-value">
+          📧 soporte@hinord.com
+        </div>
+        <a href="mailto:soporte@hinord.com?subject=Soporte%20HINORD" 
+           class="btn-contacto btn-correo">
+          ✉️ Enviar correo
+        </a>
+      </div>
+    </div>
+
+    <!-- Horario y FAQ -->
+    <div class="info-row">
+
+      <!-- Horario -->
+      <div class="info-box reveal">
+        <h3>🕐 Horario de atención</h3>
+        <div class="horario-item">
+          <span class="horario-dia">Lunes — Viernes</span>
+          <span class="horario-hora">8:00 AM — 6:00 PM</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dia">Sábados</span>
+          <span class="horario-hora">9:00 AM — 1:00 PM</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dia">Domingos y festivos</span>
+          <span class="horario-hora">Sin atención</span>
+        </div>
+        <div class="horario-item" style="margin-top:12px">
+          <span class="horario-dia">Sistema disponible</span>
+          <span class="horario-badge">24/7</span>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="info-box reveal" style="transition-delay:0.15s">
+        <h3>❓ Preguntas frecuentes</h3>
+        <div class="faq-item">
+          <div class="faq-q">¿Olvidé mi contraseña, qué hago?</div>
+          <div class="faq-a">Contáctanos por WhatsApp o correo y te ayudamos a recuperar el acceso.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿El sistema funciona sin internet?</div>
+          <div class="faq-a">La app de escritorio funciona localmente; el portal web requiere conexión.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Cómo reporto un error del sistema?</div>
+          <div class="faq-a">Escríbenos describiendo el error y en qué módulo ocurrió. Capturas de pantalla ayudan.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">HINORD</div>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Ingresar</a>
+    </div>
+    <div class="footer-copy">© 2025 HINORD · Sistema de Gestión Ganadera</div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

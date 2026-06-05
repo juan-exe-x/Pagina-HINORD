@@ -1,0 +1,290 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde-oscuro: #1a2e1a;
+      --verde-medio: #2d4a2d;
+      --verde-accent: #4a7c4a;
+      --verde-claro: #6aab5e;
+      --verde-brillante: #7ec850;
+      --blanco: #f5f5f0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    /* ===== LADO IZQUIERDO - Imagen ===== */
+    .login-left {
+      position: relative;
+      overflow: hidden;
+    }
+    .login-left img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+    }
+    .login-left-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,46,26,0.6) 0%, rgba(26,46,26,0.2) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+    }
+    .login-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--blanco);
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+    .login-brand span { color: var(--verde-brillante); }
+
+    .login-quote {
+      max-width: 420px;
+    }
+    .login-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .login-quote blockquote span { color: var(--verde-brillante); font-style: italic; }
+    .login-quote p {
+      font-size: 0.9rem;
+      color: rgba(245,245,240,0.65);
+      line-height: 1.6;
+    }
+
+    .login-stats {
+      display: flex;
+      gap: 32px;
+    }
+    .ls-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blanco);
+    }
+    .ls-label {
+      font-size: 0.75rem;
+      color: rgba(245,245,240,0.5);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* ===== LADO DERECHO - Formulario ===== */
+    .login-right {
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 72px;
+      position: relative;
+    }
+
+    .login-right::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(106,171,94,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .form-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--verde-accent);
+      margin-bottom: 12px;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--verde-oscuro);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .form-subtitle {
+      font-size: 0.92rem;
+      color: #777;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--verde-oscuro);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #e0e0d8;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--verde-oscuro);
+      background: #fafaf8;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--verde-claro);
+      box-shadow: 0 0 0 3px rgba(106,171,94,0.12);
+      background: white;
+    }
+    .form-group input::placeholder { color: #bbb; }
+
+    .form-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #666;
+      cursor: pointer;
+    }
+    .form-check input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--verde-claro);
+      cursor: pointer;
+    }
+    .form-forgot {
+      font-size: 0.85rem;
+      color: var(--verde-accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .form-forgot:hover { color: var(--verde-oscuro); }
+
+    .btn-login {
+      width: 100%;
+      padding: 15px;
+      background: var(--verde-oscuro);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+    .btn-login:hover {
+      background: var(--verde-medio);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(26,46,26,0.25);
+    }
+    .btn-login:active { transform: translateY(0); }
+
+    .form-divider {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .form-divider::before, .form-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: #e8e8e0;
+    }
+    .form-divider::before { left: 0; }
+    .form-divider::after { right: 0; }
+
+    .form-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .form-footer a {
+      color: var(--verde-accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .form-footer a:hover { color: var(--verde-oscuro); }
+
+    .back-link {
+      position: absolute;
+      top: 32px; left: 32px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: #999;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--verde-oscuro); }
+
+    /* Error state */
+    .form-group.error input {
+      border-color: #e53935;
+      box-shadow: 0 0 0 3px rgba(229,57,53,0.1);
+    }
+    .form-error-msg {
+      font-size: 0.78rem;
+      color: #e53935;
+      margin-top: 6px;
+      display: none;
+    }
+    .form-group.error .form-error-msg { display: block; }
+
+    /* Loading state */
+    .btn-login.loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .btn-login.loading::after {
+      content: ' ⟳';
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Animación entrada */
+    .login-right > * {
+      animation: slideIn 0.6s ease both;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .login-right > *:nth-child(2) { animation-delay: 0.05s; }
+    .login-right > *:nth-child(3) { animation-delay: 0.1s; }
+    .login-right > *:nth-child(4) { animation-delay: 0.15s; }
+    .login-right > *:nth-child(5) { animation-delay: 0.2s; }
