@@ -19,6 +19,7 @@ function pagina_inicio(string $titulo, string $activo, array $u): void { ?>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/animales.css">
+  <link rel="stylesheet" href="css/estadisticas.css">
 </head>
 <body>
 <div class="app">
@@ -27,7 +28,7 @@ function pagina_inicio(string $titulo, string $activo, array $u): void { ?>
   <nav>
     <a class="<?= $activo === 'panel' ? 'activo' : '' ?>" href="dashboard.php">Panel general</a>
     <a class="<?= $activo === 'animales' ? 'activo' : '' ?>" href="animales.php">Animales</a>
-    <span class="pronto">Estadísticas</span>
+    <a class="<?= $activo === 'estadisticas' ? 'activo' : '' ?>" href="estadisticas.php">Estadísticas</a>
   </nav>
   <div class="sesion"><span><?= e($u['nombre']) ?></span><a href="logout.php">Cerrar sesión</a></div>
 </aside>
