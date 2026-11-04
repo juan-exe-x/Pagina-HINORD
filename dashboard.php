@@ -40,7 +40,7 @@ if (!$error) {
   <a class="marca" href="index.html">HIN<span>ORD</span></a>
   <nav>
     <a class="activo" href="dashboard.php">Panel general</a>
-    <span class="pronto">Animales</span>
+    <a href="animales.php">Animales</a>
     <span class="pronto">Estadísticas</span>
   </nav>
   <div class="sesion"><span><?= e($usuario['nombre']) ?></span><a href="logout.php">Cerrar sesión</a></div>

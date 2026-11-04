@@ -1,0 +1,32 @@
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 18px}
+.filtros input,.filtros select{font:inherit;padding:9px 12px;border:1px solid var(--gris);border-radius:8px;background:#fff;color:var(--texto)}
+.filtros input{flex:1;min-width:220px}
+.filtros button{font:inherit;font-weight:600;padding:9px 20px;border:0;border-radius:8px;background:var(--vo);color:var(--blanco);cursor:pointer}
+.filtros button:hover{background:var(--vm)}
+.filtros .limpiar{align-self:center;color:var(--va);font-size:.9rem}
+.filtros :focus-visible{outline:2px solid var(--dorado);outline-offset:1px}
+.tabla-caja{background:#fff;border:1px solid var(--gris);border-radius:8px;overflow-x:auto}
+.tabla{width:100%;border-collapse:collapse;font-size:.92rem}
+.tabla th{text-align:left;font-weight:600;color:var(--va);font-size:.8rem;padding:12px 14px;border-bottom:1px solid var(--gris);white-space:nowrap}
+.tabla td{padding:11px 14px;border-bottom:1px solid var(--gris)}
+.tabla tr:last-child td{border-bottom:0}
+.tabla tbody tr:hover{background:#f9f9f4}
+.tabla a{color:var(--vo);font-weight:600;text-decoration:none}
+.tabla a:hover{text-decoration:underline}
+.tabla.chica{font-size:.88rem}
+.tabla.chica th,.tabla.chica td{padding:9px 6px}
+.chip{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.78rem;font-weight:600;vertical-align:middle}
+.chip.ok{background:#e1f0d8;color:#2d4a2d}.chip.aviso{background:#f6ead0;color:#7a5a12}.chip.off{background:#e8e8e0;color:#555}
+.pager{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:18px;font-size:.92rem}
+.pager a{color:var(--va);font-weight:600;text-decoration:none}
+.migas{margin:0 0 14px;font-size:.9rem}.migas a{color:var(--va);text-decoration:none}
+.ficha-cab h1 .chip{font-family:'DM Sans',sans-serif;margin-left:8px}
+.ficha-cab a{color:var(--va)}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.datos div{background:#fff;border:1px solid var(--gris);border-radius:8px;padding:14px 16px}
+.datos span{display:block;font-size:.8rem;color:var(--va)}
+.datos b{display:block;margin-top:4px;font-size:1.1rem}
+.bloque{margin-bottom:16px}
+.grande{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--vo)}
+.grande small{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:400;color:#6b6b60;margin-left:8px}
+@media(max-width:900px){.datos{grid-template-columns:1fr 1fr}}
