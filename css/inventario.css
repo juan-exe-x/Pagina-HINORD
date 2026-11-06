@@ -1,0 +1,45 @@
+.chip.rojo{background:#f6dcd7;color:#8a2a1c}.chip.media{background:#e3eaf2;color:#2f4a66}
+.dinero .amar p{color:#8a6410}
+.cab-lista{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.cab-lista h2{margin:0}
+.cab-lista button{font:inherit;font-weight:600;padding:8px 16px;border:1px solid var(--vo);border-radius:8px;background:#fff;color:var(--vo);cursor:pointer}
+.cab-lista button:hover{background:var(--vo);color:var(--blanco)}
+.tabla-caja.sin-borde{border:0;border-radius:0}
+.tabla small{color:#6b6b60}
+.tabla tfoot td{padding:12px 6px;border-top:2px solid var(--gris);font-size:.92rem}
+.tabla tfoot td:last-child{white-space:nowrap}
+.medidor{display:inline-block;width:70px;height:8px;background:var(--gris);border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:8px}
+.medidor i{display:block;height:100%}
+.medidor .ok{background:var(--va)}.medidor .aviso{background:var(--dorado)}.medidor .rojo{background:#b5432f}
+.reglas{margin:10px 0 0 18px;line-height:1.55;color:#4a4a42}
+.tarjeta .filtros{margin-top:0}
+@media print{
+  .lateral,.no-imprimir{display:none!important}
+  .app{display:block}
+  main{padding:0;max-width:none}
+  .tarjeta,.dinero article{border:0}
+  body{background:#fff}
+}
+
+.msg{padding:11px 16px;border-radius:8px;margin:16px 0;font-size:.95rem}
+.msg.ok{background:#e1f0d8;color:#2d4a2d;border:1px solid #b9d9a7}
+.msg.error{background:#fbeae7;color:#7a2a1d;border:1px solid #a23b2a}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.btn{display:inline-block;padding:9px 18px;border-radius:8px;background:var(--vo);color:var(--blanco);text-decoration:none;font-weight:600;font-size:.92rem}
+.btn.sec{background:#fff;color:var(--vo);border:1px solid var(--vo)}
+.btn:hover{background:var(--vm);color:#fff}
+.btn:focus-visible,.acc a:focus-visible{outline:2px solid var(--dorado);outline-offset:2px}
+.nota.valor{margin:-6px 0 18px;font-size:.92rem;color:#4a4a42}
+.acc{white-space:nowrap}.acc a{color:var(--va);font-weight:600;font-size:.85rem;margin-right:10px}
+.formulario{display:flex;flex-direction:column;gap:14px;max-width:720px}
+.formulario label{display:flex;flex-direction:column;gap:5px;font-size:.88rem;font-weight:600;color:var(--vo);flex:1}
+.formulario input,.formulario select{font:inherit;font-weight:400;padding:9px 12px;border:1px solid #cfcfc4;border-radius:8px;background:#fff;color:var(--texto)}
+.formulario input:focus-visible,.formulario select:focus-visible{outline:2px solid var(--dorado);outline-offset:1px}
+.formulario .fila{display:flex;flex-wrap:wrap;gap:14px}
+.formulario .fila label{min-width:180px}
+.formulario .check{flex-direction:row;align-items:center;gap:8px;font-weight:500}
+.formulario .ayuda{font-size:.85rem;color:#6b6b60}
+.botones{display:flex;align-items:center;gap:18px;margin-top:6px}
+.botones button{font:inherit;font-weight:600;padding:10px 26px;border:0;border-radius:8px;background:var(--vo);color:var(--blanco);cursor:pointer}
+.botones button:hover{background:var(--vm)}
+.botones a{color:var(--va)}

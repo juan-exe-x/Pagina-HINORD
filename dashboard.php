@@ -41,6 +41,7 @@ if (!$error) {
   <nav>
     <a class="activo" href="dashboard.php">Panel general</a>
     <a href="animales.php">Animales</a>
+    <a href="inventario.php">Inventario</a>
     <a href="estadisticas.php">Estadísticas</a>
   </nav>
   <div class="sesion"><span><?= e($usuario['nombre']) ?></span><a href="logout.php">Cerrar sesión</a></div>

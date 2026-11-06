@@ -3,6 +3,8 @@
 function qp(string $sql, array $params = []): array {
     $st = db()->prepare($sql); $st->execute($params); return $st->fetchAll();
 }
+function flash_set(string $msg, string $tipo = 'ok'): void { $_SESSION['flash'][] = [$msg, $tipo]; }
+function flash_get(): array { $f = $_SESSION['flash'] ?? []; unset($_SESSION['flash']); return $f; }
 function fecha($v): string { return $v ? date('d/m/Y', strtotime($v)) : '—'; }
 function insignia(string $estado): string {
     $c = ['Activo' => 'ok', 'Enfermo' => 'aviso', 'Muerto' => 'off', 'Vendido' => 'off'][$estado] ?? 'off';
@@ -20,6 +22,7 @@ function pagina_inicio(string $titulo, string $activo, array $u): void { ?>
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/animales.css">
   <link rel="stylesheet" href="css/estadisticas.css">
+  <link rel="stylesheet" href="css/inventario.css">
 </head>
 <body>
 <div class="app">
@@ -28,6 +31,7 @@ function pagina_inicio(string $titulo, string $activo, array $u): void { ?>
   <nav>
     <a class="<?= $activo === 'panel' ? 'activo' : '' ?>" href="dashboard.php">Panel general</a>
     <a class="<?= $activo === 'animales' ? 'activo' : '' ?>" href="animales.php">Animales</a>
+    <a class="<?= $activo === 'inventario' ? 'activo' : '' ?>" href="inventario.php">Inventario</a>
     <a class="<?= $activo === 'estadisticas' ? 'activo' : '' ?>" href="estadisticas.php">Estadísticas</a>
   </nav>
   <div class="sesion"><span><?= e($u['nombre']) ?></span><a href="logout.php">Cerrar sesión</a></div>
