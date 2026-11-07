@@ -1,0 +1,21 @@
+.clima{margin-bottom:24px}
+.clima h2 small{font-weight:400;color:#6b6b60;margin-left:8px}
+.clima-fila{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch;margin-bottom:16px}
+.clima-ahora{display:flex;flex-direction:column;justify-content:center;min-width:200px}
+.clima-ahora .grado{font-family:'Playfair Display',serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--vo)}
+.clima-ahora .desc{font-weight:600;margin-top:4px}
+.clima-ahora .det{font-size:.85rem;color:#6b6b60;margin-top:4px}
+.clima-thi{flex:1;min-width:240px;padding:14px 18px;border-radius:8px;border:1px solid var(--gris)}
+.clima-thi b{display:block}
+.clima-thi span{font-size:.82rem;opacity:.8}
+.clima-thi p{margin-top:6px;font-size:.92rem}
+.clima-thi.ok{background:#e1f0d8;color:#2d4a2d;border-color:#b9d9a7}
+.clima-thi.aviso{background:#f6ead0;color:#6e4f0e;border-color:#e3cf9b}
+.clima-thi.peligro{background:#f8e0d2;color:#7a3414;border-color:#e6b79b}
+.clima-thi.emergencia{background:#f6dcd7;color:#7a2a1d;border-color:#d9928a}
+.clima-dias{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.dia{display:flex;flex-direction:column;gap:3px;padding:10px 12px;background:var(--blanco);border-radius:8px;font-size:.85rem}
+.dia .temps{font-weight:600;font-size:1.05rem}
+.dia .temps small{font-weight:400;color:#6b6b60}
+.dia .lluvia{color:var(--va)}
+@media(max-width:900px){.clima-dias{grid-template-columns:repeat(2,1fr)}}

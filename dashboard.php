@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/includes/auth.php';
 $usuario = require_login();
+require_once __DIR__ . '/includes/clima.php';
+$clima = clima_obtener();
 $error = null;
 try {
     $leche   = one("SELECT COALESCE(SUM(valor_total),0) t FROM venta_leche WHERE MONTH(fecha_venta)=MONTH(CURDATE()) AND YEAR(fecha_venta)=YEAR(CURDATE())")['t'] ?? 0;
@@ -33,6 +35,7 @@ if (!$error) {
   <title>Panel - HINORD</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/clima.css">
 </head>
 <body>
 <div class="app">
@@ -69,6 +72,8 @@ if (!$error) {
       <p><?= (int)$hato['hembras'] ?> hembras · <?= (int)$hato['machos'] ?> machos · <?= (int)$gest ?> en gestación</p>
     </div>
   </section>
+
+  <?php include __DIR__ . '/includes/clima_tarjeta.php'; ?>
 
   <section class="dinero">
     <article><h3>Venta de leche (mes)</h3><p><?= cop($leche) ?></p></article>
