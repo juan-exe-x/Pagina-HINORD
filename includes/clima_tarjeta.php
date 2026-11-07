@@ -13,7 +13,7 @@ $diasSem = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 ?>
   <div class="clima-fila">
     <div class="clima-ahora">
-      <span class="grado"><?= round($t) ?>°</span>
+      <span class="grado"><?= round($t) ?><small>°C</small></span>
       <span class="desc"><?= e(clima_texto((int)($c['weather_code'] ?? -1))) ?></span>
       <span class="det">Sensación <?= round((float)($c['apparent_temperature'] ?? $t)) ?>° · Humedad <?= round($hr) ?>% · Viento <?= round((float)($c['wind_speed_10m'] ?? 0)) ?> km/h</span>
     </div>

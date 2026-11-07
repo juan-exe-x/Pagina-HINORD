@@ -19,3 +19,4 @@
 .dia .temps small{font-weight:400;color:#6b6b60}
 .dia .lluvia{color:var(--va)}
 @media(max-width:900px){.clima-dias{grid-template-columns:repeat(2,1fr)}}
+.clima-ahora .grado small{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:600;margin-left:3px;vertical-align:top}
